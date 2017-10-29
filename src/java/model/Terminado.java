@@ -67,5 +67,10 @@ public class Terminado {
     public void setEstado(int estado) {
         this.estado = estado;
     }
+
+    @Override
+    public String toString() {
+        return "Terminado{" + "idHorario=" + idHorario + ", fechaTerminado=" + fechaTerminado + ", fechaRevisado=" + fechaRevisado + ", supervisor=" + supervisor + ", estado=" + estado + '}';
+    }
      
 }

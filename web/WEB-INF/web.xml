@@ -60,6 +60,14 @@
         <servlet-name>HorarioM</servlet-name>
         <servlet-class>Controlador.HorarioM</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TerminadoC</servlet-name>
+        <servlet-class>Controlador.TerminadoC</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TerminadoM</servlet-name>
+        <servlet-class>Controlador.TerminadoM</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Usuario</servlet-name>
         <url-pattern>/Usuario</url-pattern>
@@ -119,6 +127,14 @@
     <servlet-mapping>
         <servlet-name>HorarioM</servlet-name>
         <url-pattern>/HorarioM</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TerminadoC</servlet-name>
+        <url-pattern>/TerminadoC</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TerminadoM</servlet-name>
+        <url-pattern>/TerminadoM</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
