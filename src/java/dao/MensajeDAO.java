@@ -43,17 +43,18 @@ public class MensajeDAO {
     }
 
     public void updateMensaje(Mensaje mensaje) throws SQLException {
-        PreparedStatement preparedStatement = connection.prepareStatement("update mensaje set Texto=?" + " where idU1=? and idU2=?");
-        preparedStatement.setString(1, mensaje.getTexto());
-        preparedStatement.setInt(2, mensaje.getIdU1());
-        preparedStatement.setInt(3, mensaje.getIdU2());
+        PreparedStatement preparedStatement = connection.prepareStatement("update mensaje set asunto=?,Texto=?" + " where idU1=? and idU2=?");
+        preparedStatement.setString(1, mensaje.getAsunto());
+        preparedStatement.setString(2, mensaje.getTexto());
+        preparedStatement.setInt(3, mensaje.getIdU1());
+        preparedStatement.setInt(4, mensaje.getIdU2());
         preparedStatement.executeUpdate();
     }
 
-    public ArrayList<Mensaje> getAllMensaje(int idU1) throws SQLException {
+    public ArrayList<Mensaje> getAllMensaje() throws SQLException {
         ArrayList<Mensaje> mensajes = new ArrayList<>();
         Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("select * from mensaje where idU1="+idU1);
+        ResultSet rs = statement.executeQuery("select * from mensaje");
         while (rs.next()) {
             Mensaje m = new Mensaje();
             m.setIdU1(rs.getInt("idU1"));
@@ -63,5 +64,20 @@ public class MensajeDAO {
             mensajes.add(m);
         }
         return mensajes;
+    }
+    
+    public Mensaje getAllMensajesByIds(int idU1,int idU2) throws SQLException {
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery("select * from mensaje where idU1="+idU1+" and idU2="+idU2);
+        if (rs.next()) {
+            Mensaje m = new Mensaje();
+            m.setIdU1(rs.getInt("idU1"));
+            m.setIdU2(rs.getInt("idU2"));
+            m.setAsunto(rs.getString("Asunto"));
+            m.setTexto(rs.getString("Texto"));
+            return m;
+        }else{
+            return null;
+        }
     }
 }

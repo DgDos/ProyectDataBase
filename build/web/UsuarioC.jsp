@@ -84,7 +84,7 @@
                             %>
                         </select>   
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Agregar</button>
-                        <a class="btn tm-bordered-btn pull-xs-center" href="/Proyecto/menu.html" role="button">Volver</a>
+                        <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </form>  
                     
                 </div>                         

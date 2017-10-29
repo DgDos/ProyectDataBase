@@ -19,6 +19,7 @@ import util.DbUtil;
  * @author FiJus
  */
 public class FuncionesDAO {
+
     private Connection connection;
 
     public FuncionesDAO() {
@@ -33,8 +34,8 @@ public class FuncionesDAO {
         preparedStatement.executeUpdate();
     }
 
-    public void deleteFunciones(int idU,int idS) throws SQLException {
-        
+    public void deleteFunciones(int idU, int idS) throws SQLException {
+
         PreparedStatement preparedStatement = connection.prepareStatement("delete from funciones where idUsuario=? and idServicio=?");
         preparedStatement.setInt(1, idU);
         preparedStatement.setInt(2, idS);
@@ -61,5 +62,20 @@ public class FuncionesDAO {
             funciones.add(f);
         }
         return funciones;
+    }
+
+    public Funciones getFuncionesByIds(int idS, int idU) throws SQLException {
+
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery("select * from funciones where idUsuario=" + idU + " and idServicio=" + idS);
+        Funciones f = new Funciones();
+        if (rs.next()) {
+            f.setIdServicio(rs.getInt("idServicio"));
+            f.setIdUsuario(rs.getInt("idUsuario"));
+            f.setValoracion(rs.getInt("valoracion"));
+            return f;
+        }else{
+            return null;
+        }
     }
 }

@@ -72,7 +72,7 @@
                         <input type="text" name="direccion" maxlength="30" class="form-control" placeholder="máx. 30"  required/>
                         <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Agregar</button>
-                        <a class="btn tm-bordered-btn pull-xs-center" href="/Proyecto/menu.html" role="button">Volver</a>
+                        <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </div>   
                         
                 </form>   

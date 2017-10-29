@@ -62,7 +62,7 @@
                         <label align="center" for="servicio">Nombre del Servicio</label>
                         <input type="text" name="servicio" maxlength="30" class="form-control" placeholder="máx. 30" value=""  />
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Modificar</button>
-                        <a class="btn tm-bordered-btn pull-xs-center" href="/Proyecto/menu.html" role="button">Volver</a>
+                        <a class="btn tm-bordered-btn pull-xs-center" href="/ProyectDataBase/menu.html" role="button">Volver</a>
                     </div>                         
                 </form>   
 

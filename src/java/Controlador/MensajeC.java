@@ -44,11 +44,11 @@ public class MensajeC extends HttpServlet {
             rd.forward(request, response);
         }
         if(action.equals("update")){
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/UsuarioU.jsp");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/MensajeU.jsp");
             rd.forward(request, response);
         }
         if(action.equals("delete")){
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/UsuarioD.jsp");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/MensajeD.jsp");
             rd.forward(request, response);
         }
     }

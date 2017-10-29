@@ -85,7 +85,7 @@
                         <label align="center" for="texto">Texto</label>
                         <input type="text" name="texto" maxlength="30" class="form-control" placeholder="máx. 30"  required/>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Agregar</button>
-                        <a class="btn tm-bordered-btn pull-xs-center" href="/Proyecto/menu.html" role="button">Volver</a>
+                        <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </form>  
                     
                 </div>                         

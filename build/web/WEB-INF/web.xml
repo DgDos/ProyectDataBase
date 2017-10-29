@@ -28,6 +28,18 @@
         <servlet-name>ServicioM</servlet-name>
         <servlet-class>Controlador.ServicioM</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FuncionesC</servlet-name>
+        <servlet-class>Controlador.FuncionesC</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FuncionesM</servlet-name>
+        <servlet-class>Controlador.FuncionesM</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MensajeM</servlet-name>
+        <servlet-class>Controlador.MensajeM</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Usuario</servlet-name>
         <url-pattern>/Usuario</url-pattern>
@@ -55,6 +67,18 @@
     <servlet-mapping>
         <servlet-name>ServicioM</servlet-name>
         <url-pattern>/ServicioM</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FuncionesC</servlet-name>
+        <url-pattern>/FuncionesC</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FuncionesM</servlet-name>
+        <url-pattern>/FuncionesM</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MensajeM</servlet-name>
+        <url-pattern>/MensajeM</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
