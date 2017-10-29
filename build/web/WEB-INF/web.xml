@@ -52,6 +52,14 @@
         <servlet-name>TrabajoARealizarC</servlet-name>
         <servlet-class>Controlador.TrabajoARealizarC</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>HorarioC</servlet-name>
+        <servlet-class>Controlador.HorarioC</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HorarioM</servlet-name>
+        <servlet-class>Controlador.HorarioM</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Usuario</servlet-name>
         <url-pattern>/Usuario</url-pattern>
@@ -103,6 +111,14 @@
     <servlet-mapping>
         <servlet-name>TrabajoARealizarC</servlet-name>
         <url-pattern>/TrabajoARealizarC</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HorarioC</servlet-name>
+        <url-pattern>/HorarioC</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HorarioM</servlet-name>
+        <url-pattern>/HorarioM</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -18,13 +18,13 @@ public class Horario {
     private int idTrabajador;
     private int horaInicio;
     private int horaFinal;
-    private Date fecha;
+    private String fecha;
     private int estado;
 
     public Horario() {
     }
 
-    public Horario(int idHorario, int idTaR, int idTrabajador, int horaInicio, int horaFinal, Date fecha, int estado) {
+    public Horario(int idHorario, int idTaR, int idTrabajador, int horaInicio, int horaFinal, String fecha, int estado) {
         this.idHorario = idHorario;
         this.idTaR = idTaR;
         this.idTrabajador = idTrabajador;
@@ -74,11 +74,11 @@ public class Horario {
         this.horaFinal = horaFinal;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
