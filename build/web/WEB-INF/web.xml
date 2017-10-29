@@ -40,6 +40,18 @@
         <servlet-name>MensajeM</servlet-name>
         <servlet-class>Controlador.MensajeM</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TrabajadoARealizarC</servlet-name>
+        <servlet-class>Controlador.TrabajadoARealizarC</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TrabajoARealizarM</servlet-name>
+        <servlet-class>Controlador.TrabajoARealizarM</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TrabajoARealizarC</servlet-name>
+        <servlet-class>Controlador.TrabajoARealizarC</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Usuario</servlet-name>
         <url-pattern>/Usuario</url-pattern>
@@ -79,6 +91,18 @@
     <servlet-mapping>
         <servlet-name>MensajeM</servlet-name>
         <url-pattern>/MensajeM</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TrabajadoARealizarC</servlet-name>
+        <url-pattern>/TrabajadoARealizarC</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TrabajoARealizarM</servlet-name>
+        <url-pattern>/TrabajoARealizarM</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TrabajoARealizarC</servlet-name>
+        <url-pattern>/TrabajoARealizarC</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

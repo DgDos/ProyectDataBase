@@ -37,7 +37,7 @@ public class TrabajoARealizarDAO {
 
     public void deleteTrabajoARealizar(int idTrabajo) throws SQLException {
         
-        PreparedStatement preparedStatement = connection.prepareStatement("delete from trabajoarealizar where idTrabajo=?");
+        PreparedStatement preparedStatement = connection.prepareStatement("update trabajoarealizar set estado=0 where idTrabajo=?");
         preparedStatement.setInt(1, idTrabajo);
         preparedStatement.executeUpdate();
     }
@@ -53,7 +53,7 @@ public class TrabajoARealizarDAO {
     public ArrayList<TrabajoARealizar> getAllTrabajosARealizar() throws SQLException {
         ArrayList<TrabajoARealizar> trabajos = new ArrayList<>();
         Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("select * from trabajoarealizar");
+        ResultSet rs = statement.executeQuery("select * from trabajoarealizar where estado=1");
         while (rs.next()) {
             TrabajoARealizar t = new TrabajoARealizar();
             t.setIdTrabajo(rs.getInt("idTrabajo"));
@@ -65,5 +65,20 @@ public class TrabajoARealizarDAO {
             trabajos.add(t);
         }
         return trabajos;
+    }
+    
+    public TrabajoARealizar getTrabajoARealizarById(int idTrabajo) throws SQLException{
+        Statement statement=connection.createStatement();
+        ResultSet rs=statement.executeQuery("select * from trabajoarealizar where idTrabajo="+idTrabajo);
+        TrabajoARealizar t=new TrabajoARealizar();
+        if(rs.next()){
+            t.setIdTrabajo(idTrabajo);
+            t.setIdEmpresa(rs.getInt("IdEmpresa"));
+            t.setIdServicio(rs.getInt("idServicio"));
+            t.setUrgencia(rs.getInt("Urgencia"));
+            t.setDetalles(rs.getString("Detalles"));
+            t.setEstado(rs.getInt("estado"));
+        }
+        return t;
     }
 }
