@@ -13,7 +13,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Agregar Horario</title>
+        <title>Modificar Horario</title>
         <!--
         Ocean Theme
         http://www.templatemo.com/tm-484-ocean
@@ -42,7 +42,7 @@
 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-xs-center">
 
-                    <h2 class="tm-section-title">Agregar Horario</h2>
+                    <h2 class="tm-section-title">Modificar Horario</h2>
                     <br><br>
 
                 </div>
@@ -50,24 +50,25 @@
                     <form align="center" action="HorarioM" method="POST" class="tm-contact-form"> 
                         <label align="center" for="idH">Horario a Modificar</label>
                         <select name="idH" class="form-control form-control-lg">
-                            
+
                             <%
                                 if (request.getAttribute("horarios") != null) {
                                     ArrayList<Horario> array = (ArrayList<Horario>) request.getAttribute("horarios");
-                                    for (Horario h : array) {     
+                                    for (Horario h : array) {
                             %>
                             <option value="<%=h.getIdHorario()%>"><%=h.getIdHorario()%></option>
                             <%      }
                                 }
                             %>
                         </select> 
+                        <br>
                         <label align="center" for="idU">Trabajador a Cargo</label>
                         <select name="idU" class="form-control form-control-lg">
                             <option value="0">-----</option>
                             <%
                                 if (request.getAttribute("usuarios") != null) {
                                     ArrayList<Trabajador> array = (ArrayList<Trabajador>) request.getAttribute("usuarios");
-                                    for (Trabajador t : array) {     
+                                    for (Trabajador t : array) {
                             %>
                             <option value="<%=t.getIdUsuario()%>"><%=t.getNombre()%></option>
                             <%      }
@@ -78,6 +79,7 @@
                         <label align="center" for="horaI1">Hora Inicial</label>
                         <select name="horaI1" class="c-select">
                             <option value="-">--------</option>
+                            <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -104,6 +106,7 @@
                         </select>
                         <select name="horaI2" class="c-select">
                             <option value="-">-----</option>
+                            <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -167,6 +170,7 @@
                         <label align="center" for="horaF1">Hora Final</label>
                         <select name="horaF1" class="c-select">
                             <option value="-">--------</option>
+                            <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -193,6 +197,7 @@
                         </select>
                         <select name="horaF2" class="c-select">
                             <option value="-">-----</option>
+                            <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -253,7 +258,8 @@
                             <option value="58">58</option>
                             <option value="59">59</option>
                         </select>
-                            <br>
+                        <br>
+                        <br>
                         <label align="center" for="fechaA">Fecha</label>
                         <select name="fechaD" class="c-select">
                             <option value="-">--------</option>
@@ -309,17 +315,19 @@
                             <option value="2017">2017</option>
                             <option value="2018">2018</option>
                         </select>
-                        <br><br>
+                        <br>
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Modificar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </form>  
-                    
+
                 </div>                         
-                   
+
 
             </section>
-            
-            
+
+
 
         </div>
 

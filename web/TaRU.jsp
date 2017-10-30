@@ -45,19 +45,21 @@
 
                 </div>
                 <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
+                    <br>
                     <form align="center" action="TrabajoARealizarM" method="POST" class="tm-contact-form"> 
-                        <label align="center" for="idT">Escoja el trabajo que quiere modificar</label>
+                        <label align="center" for="idT">Escoja el trabajo que desea modificar</label>
                         <select name="idT" class="form-control form-control-lg">
                             <%
                                 if (request.getAttribute("trabajos") != null) {
                                     ArrayList<TrabajoARealizar> array = (ArrayList<TrabajoARealizar>) request.getAttribute("trabajos");
-                                    for (TrabajoARealizar t : array) {     
+                                    for (TrabajoARealizar t : array) {
                             %>
                             <option value="<%=t.getIdTrabajo()%>"><%=t.getDetalles()%></option>
                             <%      }
                                 }
                             %>
                         </select>
+                        <br>
                         <label align="center" for="urgencia">Urgencia</label>
                         <select name="urgencia" class="form-control form-control-lg">
                             <option value="0">---------------</option>
@@ -72,18 +74,21 @@
                             <option value="9">9</option>
                             <option value="10">10</option>
                         </select>
+                        <br>
                         <label align="center" for="detalles">Detalles</label>
                         <input type="text" name="detalles" maxlength="50" class="form-control" placeholder="máx. 50" />
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Agregar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </form>  
-                    
+
                 </div>                         
-                   
+
 
             </section>
-            
-            
+
+
 
         </div>
 

@@ -44,7 +44,7 @@
                     <br><br>
 
                 </div>
-               
+
                 <form align="center" action="ServicioM" method="POST" class="tm-contact-form">                                
                     <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
                         <label align="center" for="updated">Seleccione el servicio a modificar</label>
@@ -52,23 +52,26 @@
                             <%
                                 if (request.getAttribute("servicios") != null) {
                                     ArrayList<Servicio> array = (ArrayList<Servicio>) request.getAttribute("servicios");
-                                    for (Servicio s : array) {     
+                                    for (Servicio s : array) {
                             %>
                             <option value="<%=s.getIdServicio()%>"><%=s.getNombreS()%></option>
                             <%      }
                                 }
                             %>
                         </select>   
-                        <label align="center" for="servicio">Nombre del Servicio</label>
+                        <br>
+                        <label align="center" for="servicio">Nombre del servicio</label>
                         <input type="text" name="servicio" maxlength="30" class="form-control" placeholder="máx. 30" value=""  />
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Modificar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="/ProyectDataBase/menu.html" role="button">Volver</a>
                     </div>                         
                 </form>   
 
             </section>
-            
-            
+
+
 
         </div>
 

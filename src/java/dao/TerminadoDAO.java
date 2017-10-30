@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import java.sql.Connection;
@@ -14,19 +9,17 @@ import java.util.ArrayList;
 import model.Terminado;
 import util.DbUtil;
 
-/**
- *
- * @author FiJus
- */
 public class TerminadoDAO {
+
     private Connection connection;
 
     public TerminadoDAO() {
         connection = DbUtil.getConnection();
     }
+
     //estado 0 terminado 1 revision
     public void addTerminado(Terminado t) throws SQLException {
-        String s="pr";
+        String s = "pr";
         PreparedStatement preparedStatement = connection.prepareStatement("insert into terminado(idHorario,fechaTerminado,fechaRevisado,supervisor,estado) values (?,?,?,?,0)");
         preparedStatement.setInt(1, t.getIdHorario());
         preparedStatement.setString(2, t.getFechaTerminado());
@@ -63,12 +56,12 @@ public class TerminadoDAO {
         }
         return terminados;
     }
-    
-    public Terminado getTerminadoById(int idHorario) throws SQLException{
-        Terminado t=new Terminado();
-        Statement statement= connection.createStatement();
-        ResultSet rs=statement.executeQuery("select * from terminado where idHorario="+idHorario);
-        if(rs.next()){
+
+    public Terminado getTerminadoById(int idHorario) throws SQLException {
+        Terminado t = new Terminado();
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery("select * from terminado where idHorario=" + idHorario);
+        if (rs.next()) {
             t.setIdHorario(idHorario);
             t.setFechaTerminado(rs.getString("fechaTerminado"));
             t.setFechaRevisado(rs.getString("fechaRevisado"));

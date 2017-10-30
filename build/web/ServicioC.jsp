@@ -45,7 +45,7 @@
 
                 </div>
                 <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
-                    <label align="center" for="supervisor">Servicios Existentes</label>
+                    <label align="center" for="supervisor">Servicios existentes</label>
                     <select name="supervisor" class="form-control form-control-lg">
                         <%
                             if (request.getAttribute("servicios") != null) {
@@ -60,14 +60,14 @@
                     <%
                         if (request.getAttribute("Respuesta") != null) {
                     %><h6 class="tm-2-col-text-description">Este servicio ya existe</h6><%
-                        } else {
+                    } else {
                     %>
                     <br><%}%>
                     <form align="center" action="ServicioC" method="POST" class="tm-contact-form">    
                         <label align="center" for="servicio">Nombre del Servicio</label>
                         <input type="text" name="servicio" maxlength="30" class="form-control" placeholder="máx. 30"  required/>
                         <br>
-
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Agregar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </form>  

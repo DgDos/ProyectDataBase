@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
                     <form align="center" action="TerminadoM" method="GET" class="tm-contact-form"> 
-                        <label align="center" for="idT">Terminado </label>
+                        <label align="center" for="idT">Seleccione el trabajo terminado a eliminar </label>
                         <select name="idT" class="form-control form-control-lg">
                             <%
                                 if (request.getAttribute("terminados") != null) {
@@ -58,6 +58,8 @@
                                 }
                             %>
                         </select>  
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Eliminar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </form>  

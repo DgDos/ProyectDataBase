@@ -1,15 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
 
 import dao.HorarioDAO;
 import dao.TrabajadorDAO;
 import dao.TrabajoARealizarDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -23,10 +17,6 @@ import model.Horario;
 import model.Trabajador;
 import model.TrabajoARealizar;
 
-/**
- *
- * @author FiJus
- */
 public class HorarioC extends HttpServlet {
 
     @Override
@@ -54,7 +44,7 @@ public class HorarioC extends HttpServlet {
         try {
             trabajos = t.getAllTrabajosARealizar();
             usuarios = u.getAllTrabajadores();
-            horarios= h.getAllHorarios();
+            horarios = h.getAllHorarios();
         } catch (SQLException ex) {
             Logger.getLogger(HorarioM.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -76,8 +66,8 @@ public class HorarioC extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if (!(request.getParameter("horaI1")).equals("-") && !(request.getParameter("horaI2")).equals("-") && 
-                !(request.getParameter("horaF1")).equals("-") && !(request.getParameter("horaF2")).equals("-")
+        if (!(request.getParameter("horaI1")).equals("-") && !(request.getParameter("horaI2")).equals("-")
+                && !(request.getParameter("horaF1")).equals("-") && !(request.getParameter("horaF2")).equals("-")
                 && !(request.getParameter("fechaD")).equals("-") && !(request.getParameter("fechaM")).equals("-")
                 && !(request.getParameter("fechaA")).equals("-")) {
             int idT = Integer.parseInt(request.getParameter("idT"));

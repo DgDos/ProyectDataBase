@@ -12,7 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Agregar Funcion</title>
+        <title>Agregar Función</title>
         <!--
         Ocean Theme
         http://www.templatemo.com/tm-484-ocean
@@ -41,7 +41,7 @@
 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-xs-center">
 
-                    <h2 class="tm-section-title">Agregar Funcion</h2>
+                    <h2 class="tm-section-title">Agregar Función</h2>
                     <br><br>
 
                 </div>
@@ -52,7 +52,7 @@
                             <%
                                 if (request.getAttribute("usuarios") != null) {
                                     ArrayList<Trabajador> array = (ArrayList<Trabajador>) request.getAttribute("usuarios");
-                                    for (Trabajador t : array) {     
+                                    for (Trabajador t : array) {
                             %>
                             <option value="<%=t.getIdUsuario()%>"><%=t.getNombre()%></option>
                             <%      }
@@ -65,7 +65,7 @@
                             <%
                                 if (request.getAttribute("servicios") != null) {
                                     ArrayList<Servicio> array = (ArrayList<Servicio>) request.getAttribute("servicios");
-                                    for (Servicio s : array) {     
+                                    for (Servicio s : array) {
                             %>
                             <option value="<%=s.getIdServicio()%>"><%=s.getNombreS()%></option>
                             <%      }
@@ -73,14 +73,14 @@
                             %>
                         </select>  
                         <%
-                        if(request.getAttribute("respuesta") != null){
-                            %><h6 class="tm-2-col-text-description">Ya existe un usuario con este servicio</h6><%
-                        }else{
+                            if (request.getAttribute("respuesta") != null) {
+                        %><h6 class="tm-2-col-text-description">Ya existe un usuario con este servicio</h6><%
+                        } else {
                         %>
                         <br>
                         <%}%>
-                        
-                        <label align="center" for="valoracion">Valoracion</label>
+
+                        <label align="center" for="valoracion">Valoración</label>
                         <select name="valoracion" class="form-control form-control-lg">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -93,17 +93,18 @@
                             <option value="9">9</option>
                             <option value="10">10</option>
                         </select>
- 
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Agregar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </form>  
-                    
+
                 </div>                         
-                   
+
 
             </section>
-            
-            
+
+
 
         </div>
 

@@ -68,8 +68,9 @@
                         <label align="center" for="password">Password</label>
                         <input type="password" name="password" maxlength="30" class="form-control" placeholder="máx. 30"  required/>
                         <br>
-                        <label align="center" for="supervisor">Direccion</label>
+                        <label align="center" for="supervisor">Dirección</label>
                         <input type="text" name="direccion" maxlength="30" class="form-control" placeholder="máx. 30"  required/>
+                        <br>
                         <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Agregar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>

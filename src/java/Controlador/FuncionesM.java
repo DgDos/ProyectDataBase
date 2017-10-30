@@ -1,15 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
 
 import dao.FuncionesDAO;
 import dao.ServicioDAO;
 import dao.TrabajadorDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -23,10 +17,6 @@ import model.Funciones;
 import model.Servicio;
 import model.Trabajador;
 
-/**
- *
- * @author FiJus
- */
 public class FuncionesM extends HttpServlet {
 
     @Override

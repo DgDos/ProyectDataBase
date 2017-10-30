@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import java.sql.Connection;
@@ -14,11 +9,8 @@ import java.util.ArrayList;
 import model.Servicio;
 import util.DbUtil;
 
-/**
- *
- * @author FiJus
- */
 public class ServicioDAO {
+
     private Connection connection;
 
     public ServicioDAO() {
@@ -32,7 +24,7 @@ public class ServicioDAO {
     }
 
     public void deleteServicio(int idServicio) throws SQLException {
-        
+
         PreparedStatement preparedStatement = connection.prepareStatement("update servicio set estado=0 where idServicio=?");
         preparedStatement.setInt(1, idServicio);
         preparedStatement.executeUpdate();
@@ -50,7 +42,7 @@ public class ServicioDAO {
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery("select * from servicio where estado=1");
         while (rs.next()) {
-            Servicio s=new Servicio();
+            Servicio s = new Servicio();
             s.setIdServicio(rs.getInt("idServicio"));
             s.setNombreS(rs.getString("nombreS"));
             s.setEstado(rs.getInt("estado"));
@@ -58,12 +50,12 @@ public class ServicioDAO {
         }
         return servicios;
     }
-    
-    public Servicio getServicioById(int idS) throws SQLException{
-        Statement statement=connection.createStatement();
-        ResultSet rs=statement.executeQuery("select * from servicio where idServicio="+idS);
-        Servicio s=new Servicio();
-        if(rs.next()){
+
+    public Servicio getServicioById(int idS) throws SQLException {
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery("select * from servicio where idServicio=" + idS);
+        Servicio s = new Servicio();
+        if (rs.next()) {
             s.setIdServicio(idS);
             s.setNombreS(rs.getString("nombreS"));
             s.setEstado(rs.getInt("estado"));

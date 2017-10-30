@@ -47,28 +47,30 @@
                 </div>
                 <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
                     <form align="center" action="TrabajoARealizarM" method="GET" class="tm-contact-form">                                
-                        <label align="center" for="idT">Escoja el trabajo que quiere eliminar</label>
+                        <label align="center" for="idT">Escoja el trabajo que desea eliminar</label>
                         <select name="idT" class="form-control form-control-lg">
                             <%
                                 if (request.getAttribute("trabajos") != null) {
                                     ArrayList<TrabajoARealizar> array = (ArrayList<TrabajoARealizar>) request.getAttribute("trabajos");
-                                    for (TrabajoARealizar t : array) {     
+                                    for (TrabajoARealizar t : array) {
                             %>
                             <option value="<%=t.getIdTrabajo()%>"><%=t.getDetalles()%></option>
                             <%      }
                                 }
                             %>
                         </select> 
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Eliminar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </form>  
-                    
+
                 </div>                         
-                   
+
 
             </section>
-            
-            
+
+
 
         </div>
 

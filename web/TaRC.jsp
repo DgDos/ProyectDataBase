@@ -52,7 +52,7 @@
                             <%
                                 if (request.getAttribute("empresas") != null) {
                                     ArrayList<EmpresaCliente> array = (ArrayList<EmpresaCliente>) request.getAttribute("empresas");
-                                    for (EmpresaCliente e : array) {     
+                                    for (EmpresaCliente e : array) {
                             %>
                             <option value="<%=e.getNIT()%>"><%=e.getNombreEmpresa()%></option>
                             <%      }
@@ -65,13 +65,14 @@
                             <%
                                 if (request.getAttribute("servicios") != null) {
                                     ArrayList<Servicio> array = (ArrayList<Servicio>) request.getAttribute("servicios");
-                                    for (Servicio s : array) {     
+                                    for (Servicio s : array) {
                             %>
                             <option value="<%=s.getIdServicio()%>"><%=s.getNombreS()%></option>
                             <%      }
                                 }
                             %>
                         </select>  
+                        <br>
                         <label align="center" for="urgencia">Urgencia</label>
                         <select name="urgencia" class="form-control form-control-lg">
                             <option value="1">1</option>
@@ -85,18 +86,21 @@
                             <option value="9">9</option>
                             <option value="10">10</option>
                         </select>
+                        <br>
                         <label align="center" for="detalles">Detalles</label>
                         <input type="text" name="detalles" maxlength="50" class="form-control" placeholder="máx. 50"  required/>
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Agregar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </form>  
-                    
+
                 </div>                         
-                   
+
 
             </section>
-            
-            
+
+
 
         </div>
 

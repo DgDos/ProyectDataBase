@@ -52,7 +52,7 @@
                             <%
                                 if (request.getAttribute("trabajos") != null) {
                                     ArrayList<TrabajoARealizar> array = (ArrayList<TrabajoARealizar>) request.getAttribute("trabajos");
-                                    for (TrabajoARealizar t : array) {     
+                                    for (TrabajoARealizar t : array) {
                             %>
                             <option value="<%=t.getIdTrabajo()%>"><%=t.getDetalles()%></option>
                             <%      }
@@ -65,7 +65,7 @@
                             <%
                                 if (request.getAttribute("usuarios") != null) {
                                     ArrayList<Trabajador> array = (ArrayList<Trabajador>) request.getAttribute("usuarios");
-                                    for (Trabajador t : array) {     
+                                    for (Trabajador t : array) {
                             %>
                             <option value="<%=t.getIdUsuario()%>"><%=t.getNombre()%></option>
                             <%      }
@@ -76,6 +76,7 @@
                         <label align="center" for="horaI1">Hora Inicial</label>
                         <select name="horaI1" class="c-select">
                             <option value="-">--------</option>
+                            <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -102,6 +103,7 @@
                         </select>
                         <select name="horaI2" class="c-select">
                             <option value="-">-----</option>
+                            <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -165,6 +167,7 @@
                         <label align="center" for="horaI2">Hora Final</label>
                         <select name="horaF1" class="c-select">
                             <option value="-">--------</option>
+                            <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -191,6 +194,7 @@
                         </select>
                         <select name="horaF2" class="c-select">
                             <option value="-">-----</option>
+                            <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -251,7 +255,8 @@
                             <option value="58">58</option>
                             <option value="59">59</option>
                         </select>
-                            <br>
+                        <br>
+                        <br>
                         <label align="center" for="fechaA">Fecha</label>
                         <select name="fechaD" class="c-select">
                             <option value="-">--------</option>
@@ -307,24 +312,25 @@
                             <option value="2017">2017</option>
                             <option value="2018">2018</option>
                         </select>
-                        <br><br>
                         <%
-                        if(request.getAttribute("respuesta") != null){
-                            %><h6 class="tm-2-col-text-description">Por favor llene toda la informacion</h6><%
-                        }else{
+                            if (request.getAttribute("respuesta") != null) {
+                        %><h6 class="tm-2-col-text-description">Por favor llene toda la informacion</h6><%
+                        } else {
                         %>
                         <br>
                         <%}%>
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Agregar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </form>  
-                    
+
                 </div>                         
-                   
+
 
             </section>
-            
-            
+
+
 
         </div>
 

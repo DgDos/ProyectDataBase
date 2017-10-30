@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import java.sql.Connection;
@@ -11,15 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import model.Funciones;
 import model.TrabajoARealizar;
 import util.DbUtil;
 
-/**
- *
- * @author FiJus
- */
 public class TrabajoARealizarDAO {
+
     private Connection connection;
 
     public TrabajoARealizarDAO() {
@@ -36,7 +27,7 @@ public class TrabajoARealizarDAO {
     }
 
     public void deleteTrabajoARealizar(int idTrabajo) throws SQLException {
-        
+
         PreparedStatement preparedStatement = connection.prepareStatement("update trabajoarealizar set estado=0 where idTrabajo=?");
         preparedStatement.setInt(1, idTrabajo);
         preparedStatement.executeUpdate();
@@ -66,12 +57,12 @@ public class TrabajoARealizarDAO {
         }
         return trabajos;
     }
-    
-    public TrabajoARealizar getTrabajoARealizarById(int idTrabajo) throws SQLException{
-        Statement statement=connection.createStatement();
-        ResultSet rs=statement.executeQuery("select * from trabajoarealizar where idTrabajo="+idTrabajo);
-        TrabajoARealizar t=new TrabajoARealizar();
-        if(rs.next()){
+
+    public TrabajoARealizar getTrabajoARealizarById(int idTrabajo) throws SQLException {
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery("select * from trabajoarealizar where idTrabajo=" + idTrabajo);
+        TrabajoARealizar t = new TrabajoARealizar();
+        if (rs.next()) {
             t.setIdTrabajo(idTrabajo);
             t.setIdEmpresa(rs.getInt("IdEmpresa"));
             t.setIdServicio(rs.getInt("idServicio"));

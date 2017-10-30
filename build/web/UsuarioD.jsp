@@ -47,22 +47,22 @@
                 </div>
                 <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
                     <form align="center" action="UsuarioM" method="GET" class="tm-contact-form">                                
-                        <label align="center" for="trabajador">Escoja el trabajador que quiere eliminar</label>
+                        <label align="center" for="trabajador">Escoja el trabajador que desea eliminar</label>
                         <select name="trabajador" class="form-control form-control-lg">
                             <%
                                 if (request.getAttribute("usuarios") != null) {
                                     ArrayList<Trabajador> array = (ArrayList<Trabajador>) request.getAttribute("usuarios");
-                                    for (Trabajador t : array) {     
+                                    for (Trabajador t : array) {
                             %>
                             <option value="<%=t.getIdUsuario()%>"><%=t.getNombre()%></option>
                             <%      }
                                 }
                             %>
                         </select> 
-                        <% 
-                        if(request.getAttribute("respuesta") != null){%>
-                            <h6 class="tm-2-col-text-description">No tiene permisos para eliminar usuarios</h6>
-                        <%}else{%>
+                        <%
+                            if (request.getAttribute("respuesta") != null) {%>
+                        <h6 class="tm-2-col-text-description">No tiene permisos para eliminar usuarios</h6>
+                        <%} else {%>
                         <br>
                         <%}%>
                         <label align="center" for="usuario">Usuario</label>
@@ -70,17 +70,18 @@
                         <br>
                         <label align="center" for="password">Password</label>
                         <input type="password" name="password" maxlength="30" class="form-control" placeholder="máx. 30"  required/>
-                        
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Eliminar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </form>  
-                    
+
                 </div>                         
-                   
+
 
             </section>
-            
-            
+
+
 
         </div>
 

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
 
 import dao.HorarioDAO;
@@ -22,10 +17,6 @@ import model.Horario;
 import model.Terminado;
 import model.Trabajador;
 
-/**
- *
- * @author FiJus
- */
 public class TerminadoC extends HttpServlet {
 
     @Override

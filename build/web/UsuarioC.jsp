@@ -61,11 +61,11 @@
                         <br>
                         <label align="center" for="usuario">Usuario</label>
                         <input type="text" name="usuario" maxlength="30" class="form-control" placeholder="máx. 30"  required/>
-                        <% 
-                        if(request.getAttribute("respuesta") != null){%>
-                            <h6 class="tm-2-col-text-description">Ya existe ese usuario por favor escoja otro</h6>
-                        <%}else{%>
-                            <br>
+                        <%
+                            if (request.getAttribute("respuesta") != null) {%>
+                        <h6 class="tm-2-col-text-description">Ya existe ese usuario por favor escoja otro</h6>
+                        <%} else {%>
+                        <br>
                         <%}%>
                         <label align="center" for="password">Password</label>
                         <input type="password" name="password" maxlength="30" class="form-control" placeholder="máx. 30"  required/>
@@ -76,23 +76,25 @@
                             <%
                                 if (request.getAttribute("usuarios") != null) {
                                     ArrayList<Trabajador> array = (ArrayList<Trabajador>) request.getAttribute("usuarios");
-                                    for (Trabajador t : array) {     
+                                    for (Trabajador t : array) {
                             %>
                             <option value="<%=t.getIdUsuario()%>"><%=t.getNombre()%></option>
                             <%      }
                                 }
                             %>
                         </select>   
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Agregar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </form>  
-                    
+
                 </div>                         
-                   
+
 
             </section>
-            
-            
+
+
 
         </div>
 

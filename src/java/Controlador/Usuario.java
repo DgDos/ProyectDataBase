@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
 
 import dao.TrabajadorDAO;
@@ -18,10 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Trabajador;
 
-/**
- *
- * @author FiJus
- */
 public class Usuario extends HttpServlet {
 
     @Override
@@ -86,7 +77,7 @@ public class Usuario extends HttpServlet {
                 Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
             }
             response.sendRedirect("menu.html");
-        }else{
+        } else {
             request.setAttribute("usuarios", trabajadores);
             request.setAttribute("respuesta", "Hay algo aqui");
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/UsuarioC.jsp");

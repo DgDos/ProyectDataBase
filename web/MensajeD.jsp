@@ -48,12 +48,12 @@
                 </div>
                 <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
                     <form align="center" action="MensajeM" method="GET" class="tm-contact-form">                                
-                        <label align="center" for="idU1">Primer Usuario</label>
+                        <label align="center" for="idU1">De:</label>
                         <select name="idU1" class="form-control form-control-lg">
                             <%
                                 if (request.getAttribute("usuarios") != null) {
                                     ArrayList<Trabajador> array = (ArrayList<Trabajador>) request.getAttribute("usuarios");
-                                    for (Trabajador t : array) {     
+                                    for (Trabajador t : array) {
                             %>
                             <option value="<%=t.getIdUsuario()%>"><%=t.getNombre()%></option>
                             <%      }
@@ -61,28 +61,30 @@
                             %>
                         </select> 
                         <br>
-                        <label align="center" for="idU2">Segundo Usuario</label>
+                        <label align="center" for="idU2">Para:</label>
                         <select name="idU2" class="form-control form-control-lg">
                             <%
                                 if (request.getAttribute("usuarios") != null) {
                                     ArrayList<Trabajador> array = (ArrayList<Trabajador>) request.getAttribute("usuarios");
-                                    for (Trabajador t : array) {     
+                                    for (Trabajador t : array) {
                             %>
                             <option value="<%=t.getIdUsuario()%>"><%=t.getNombre()%></option>
                             <%      }
                                 }
                             %>
                         </select> 
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Eliminar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </form>  
-                    
+
                 </div>                         
-                   
+
 
             </section>
-            
-            
+
+
 
         </div>
 

@@ -44,7 +44,7 @@
                     <br><br>
 
                 </div>
-               
+
                 <form align="center" action="EmpresaM" method="POST" class="tm-contact-form">                                
                     <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
                         <label align="center" for="updated">Seleccione la empresa a modificar</label>
@@ -52,13 +52,14 @@
                             <%
                                 if (request.getAttribute("empresas") != null) {
                                     ArrayList<EmpresaCliente> array = (ArrayList<EmpresaCliente>) request.getAttribute("empresas");
-                                    for (EmpresaCliente e : array) {     
+                                    for (EmpresaCliente e : array) {
                             %>
                             <option value="<%=e.getNIT()%>"><%=e.getNombreEmpresa()%></option>
                             <%      }
                                 }
                             %>
-                        </select>   
+                        </select>  
+                        <br>
                         <label align="center" for="empresa">Nombre de la Empresa</label>
                         <input type="text" name="empresa" maxlength="30" class="form-control" placeholder="máx. 30" value=""  />
                         <br>
@@ -68,17 +69,18 @@
                         <label align="center" for="password">Password</label>
                         <input type="password" name="password" maxlength="30" class="form-control" placeholder="máx. 30" value=""  />
                         <br>
-                        <label align="center" for="direccion">Direccion</label>
+                        <label align="center" for="direccion">Dirección</label>
                         <input type="text" name="direccion" maxlength="30" class="form-control" placeholder="máx. 30" value=""  />
-                        
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Modificar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </div>                         
                 </form>   
 
             </section>
-            
-            
+
+
 
         </div>
 

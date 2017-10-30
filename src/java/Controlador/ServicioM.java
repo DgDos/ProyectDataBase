@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
 
 import dao.ServicioDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -19,13 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Servicio;
 
-/**
- *
- * @author FiJus
- */
 public class ServicioM extends HttpServlet {
 
-     @Override
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String usuario = request.getParameter("usuario");
@@ -56,16 +46,16 @@ public class ServicioM extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int idS= Integer.parseInt(request.getParameter("updated"));
-        String nombre=request.getParameter("servicio");
-        ServicioDAO s=new ServicioDAO();
-        Servicio servicioM=new Servicio();
+        int idS = Integer.parseInt(request.getParameter("updated"));
+        String nombre = request.getParameter("servicio");
+        ServicioDAO s = new ServicioDAO();
+        Servicio servicioM = new Servicio();
         try {
-            servicioM=s.getServicioById(idS);
+            servicioM = s.getServicioById(idS);
         } catch (SQLException ex) {
             Logger.getLogger(ServicioM.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if(!nombre.equals("")){
+        if (!nombre.equals("")) {
             servicioM.setNombreS(nombre);
         }
         try {

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import java.sql.Connection;
@@ -14,11 +9,8 @@ import java.util.ArrayList;
 import model.EmpresaCliente;
 import util.DbUtil;
 
-/**
- *
- * @author FiJus
- */
 public class EmpresaClienteDAO {
+
     private Connection connection;
 
     public EmpresaClienteDAO() {
@@ -36,7 +28,7 @@ public class EmpresaClienteDAO {
     }
 
     public void deleteEmpresa(int idE) throws SQLException {
-        
+
         PreparedStatement preparedStatement = connection.prepareStatement("update empresacliente set estado=0 where NIT=?");
         preparedStatement.setInt(1, idE);
         preparedStatement.executeUpdate();
@@ -68,11 +60,11 @@ public class EmpresaClienteDAO {
         return empresas;
     }
 
-    public EmpresaCliente getEmpresaById(int idU) throws SQLException{
+    public EmpresaCliente getEmpresaById(int idU) throws SQLException {
         Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("select * from empresacliente where NIT="+idU);
-        EmpresaCliente e=new EmpresaCliente();
-        if(rs.next()){
+        ResultSet rs = statement.executeQuery("select * from empresacliente where NIT=" + idU);
+        EmpresaCliente e = new EmpresaCliente();
+        if (rs.next()) {
             e.setNIT(idU);
             e.setNombreEmpresa(rs.getString("nombreEmpresa"));
             e.setUsuarioE(rs.getString("usuarioE"));

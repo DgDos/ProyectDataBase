@@ -1,17 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import model.Horario;
 import util.DbUtil;
@@ -21,11 +14,13 @@ import util.DbUtil;
  * @author FiJus
  */
 public class HorarioDAO {
+
     private Connection connection;
 
     public HorarioDAO() {
         connection = DbUtil.getConnection();
     }
+
     // estado 1=activo, 2=terminado falta revision, 3=revisado
     public void addHorario(Horario h) throws SQLException {
         PreparedStatement preparedStatement = connection.prepareStatement("insert into horario(idTaR,idTrabajador,horaInicio,horaFinal,Fecha,estado) values (?,?,?,?,?,?)");
@@ -38,10 +33,8 @@ public class HorarioDAO {
         preparedStatement.executeUpdate();
     }
 
-
-
     public void deleteHorario(int idHorario) throws SQLException {
-        
+
         PreparedStatement preparedStatement = connection.prepareStatement("delete from horario where idHorario=?");
         preparedStatement.setInt(1, idHorario);
         preparedStatement.executeUpdate();
@@ -49,7 +42,7 @@ public class HorarioDAO {
 
     public void updateHorario(Horario h) throws SQLException {
         PreparedStatement preparedStatement = connection.prepareStatement("update horario set idTrabajador=?,horaInicio=?,horaFinal=?,Fecha=?" + " where idHorario=?");
-        preparedStatement.setInt(1,h.getIdTrabajador());
+        preparedStatement.setInt(1, h.getIdTrabajador());
         preparedStatement.setInt(2, h.getHoraInicio());
         preparedStatement.setInt(3, h.getHoraFinal());
         preparedStatement.setString(4, h.getFecha());
@@ -74,12 +67,12 @@ public class HorarioDAO {
         }
         return horarios;
     }
-    
-    public Horario getHorarioById(int idHorario) throws SQLException{
-        Statement statement=connection.createStatement();
-        ResultSet rs=statement.executeQuery("select * from horario where idHorario="+idHorario);
-        Horario h=new Horario();
-        if(rs.next()){
+
+    public Horario getHorarioById(int idHorario) throws SQLException {
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery("select * from horario where idHorario=" + idHorario);
+        Horario h = new Horario();
+        if (rs.next()) {
             h.setIdHorario(idHorario);
             h.setIdTaR(rs.getInt("idTaR"));
             h.setIdTrabajador(rs.getInt("idTrabajador"));

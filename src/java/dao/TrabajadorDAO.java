@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import java.sql.Connection;
@@ -14,10 +9,6 @@ import java.util.ArrayList;
 import model.Trabajador;
 import util.DbUtil;
 
-/**
- *
- * @author FiJus
- */
 public class TrabajadorDAO {
 
     private Connection connection;
@@ -75,7 +66,7 @@ public class TrabajadorDAO {
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery("select * from trabajador where idUsuario=" + idT);
         Trabajador t = new Trabajador();
-        if(rs.next()){
+        if (rs.next()) {
             t.setIdUsuario(rs.getInt("idUsuario"));
             t.setUsuarioT(rs.getString("usuarioT"));
             t.setPasswordT(rs.getString("passwordT"));

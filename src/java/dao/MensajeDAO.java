@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import java.sql.Connection;
@@ -14,11 +9,8 @@ import java.util.ArrayList;
 import model.Mensaje;
 import util.DbUtil;
 
-/**
- *
- * @author FiJus
- */
 public class MensajeDAO {
+
     private Connection connection;
 
     public MensajeDAO() {
@@ -34,8 +26,8 @@ public class MensajeDAO {
         preparedStatement.executeUpdate();
     }
 
-    public void deleteMensaje(int idU1,int idU2) throws SQLException {
-        
+    public void deleteMensaje(int idU1, int idU2) throws SQLException {
+
         PreparedStatement preparedStatement = connection.prepareStatement("delete from mensaje where idU1=? and idU2=?");
         preparedStatement.setInt(1, idU1);
         preparedStatement.setInt(2, idU2);
@@ -65,10 +57,10 @@ public class MensajeDAO {
         }
         return mensajes;
     }
-    
-    public Mensaje getAllMensajesByIds(int idU1,int idU2) throws SQLException {
+
+    public Mensaje getAllMensajesByIds(int idU1, int idU2) throws SQLException {
         Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("select * from mensaje where idU1="+idU1+" and idU2="+idU2);
+        ResultSet rs = statement.executeQuery("select * from mensaje where idU1=" + idU1 + " and idU2=" + idU2);
         if (rs.next()) {
             Mensaje m = new Mensaje();
             m.setIdU1(rs.getInt("idU1"));
@@ -76,7 +68,7 @@ public class MensajeDAO {
             m.setAsunto(rs.getString("Asunto"));
             m.setTexto(rs.getString("Texto"));
             return m;
-        }else{
+        } else {
             return null;
         }
     }

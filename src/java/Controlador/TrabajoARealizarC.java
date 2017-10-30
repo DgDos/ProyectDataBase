@@ -1,15 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
 
 import dao.EmpresaClienteDAO;
 import dao.ServicioDAO;
 import dao.TrabajoARealizarDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -23,10 +17,6 @@ import model.EmpresaCliente;
 import model.Servicio;
 import model.TrabajoARealizar;
 
-/**
- *
- * @author FiJus
- */
 public class TrabajoARealizarC extends HttpServlet {
 
     @Override
@@ -50,10 +40,10 @@ public class TrabajoARealizarC extends HttpServlet {
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/TaRC.jsp");
             rd.forward(request, response);
         }
-        TrabajoARealizarDAO t=new TrabajoARealizarDAO();
-        ArrayList<TrabajoARealizar> trabajos=new ArrayList<>();
+        TrabajoARealizarDAO t = new TrabajoARealizarDAO();
+        ArrayList<TrabajoARealizar> trabajos = new ArrayList<>();
         try {
-            trabajos=t.getAllTrabajosARealizar();
+            trabajos = t.getAllTrabajosARealizar();
         } catch (SQLException ex) {
             Logger.getLogger(TrabajoARealizarC.class.getName()).log(Level.SEVERE, null, ex);
         }

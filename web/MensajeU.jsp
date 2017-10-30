@@ -47,7 +47,7 @@
 
                 <form align="center" action="MensajeM" method="POST" class="tm-contact-form">                                
                     <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
-                        <label align="center" for="idU1">Primer Usuario</label>
+                        <label align="center" for="idU1">De:</label>
                         <select name="idU1" class="form-control form-control-lg">
                             <%
                                 if (request.getAttribute("usuarios") != null) {
@@ -60,7 +60,7 @@
                             %>
                         </select> 
                         <br>  
-                         <label align="center" for="idU2">Segundo Usuario</label>
+                        <label align="center" for="idU2">Para:</label>
                         <select name="idU2" class="form-control form-control-lg">
                             <%
                                 if (request.getAttribute("usuarios") != null) {
@@ -75,16 +75,17 @@
                         <br>
                         <%
                             if (request.getAttribute("respuesta") != null) {
-                        %><h6 class="tm-2-col-text-description">Estos usuario no poseen mensajes entre si</h6><%
-                           } else {
+                        %><h6 class="tm-2-col-text-description">Estos usuario no poseen mensajes entre sí.</h6><%
+                        } else {
                         %>
-                        <br>
                         <%}%>
                         <label align="center" for="asunto">Asunto</label>
                         <input type="text" name="asunto" maxlength="30" class="form-control" placeholder="máx. 30" value=""  />
                         <br>
-                        <label align="center" for="texto">Texto</label>
-                        <input type="text" name="texto" maxlength="30" class="form-control" placeholder="máx. 30" value=""  />
+                        <label align="center" for="texto">Mensaje</label>
+                        <input type="text" name="texto" maxlength="100" class="form-control" placeholder="máx. 100" value=""  />
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Modificar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </div>                         

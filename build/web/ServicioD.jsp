@@ -47,22 +47,22 @@
                 </div>
                 <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
                     <form align="center" action="ServicioM" method="GET" class="tm-contact-form">                                
-                        <label align="center" for="servicio">Escoja la Empresa que quiere eliminar</label>
+                        <label align="center" for="servicio">Escoja el servicio a eliminar</label>
                         <select name="servicio" class="form-control form-control-lg">
                             <%
                                 if (request.getAttribute("servicios") != null) {
                                     ArrayList<Servicio> array = (ArrayList<Servicio>) request.getAttribute("servicios");
-                                    for (Servicio s : array) {     
+                                    for (Servicio s : array) {
                             %>
                             <option value="<%=s.getIdServicio()%>"><%=s.getNombreS()%></option>
                             <%      }
                                 }
                             %>
                         </select> 
-                        <% 
-                        if(request.getAttribute("respuesta") != null){%>
-                            <h6 class="tm-2-col-text-description">No tiene permisos para eliminar usuarios</h6>
-                        <%}else{%>
+                        <%
+                            if (request.getAttribute("respuesta") != null) {%>
+                        <h6 class="tm-2-col-text-description">No tiene permisos para eliminar usuarios</h6>
+                        <%} else {%>
                         <br>
                         <%}%>
                         <label align="center" for="usuario">Usuario</label>
@@ -70,17 +70,18 @@
                         <br>
                         <label align="center" for="password">Password</label>
                         <input type="password" name="password" maxlength="30" class="form-control" placeholder="máx. 30"  required/>
-                        
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Eliminar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </form>  
-                    
+
                 </div>                         
-                   
+
 
             </section>
-            
-            
+
+
 
         </div>
 

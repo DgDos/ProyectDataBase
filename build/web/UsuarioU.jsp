@@ -44,7 +44,7 @@
                     <br><br>
 
                 </div>
-               
+
                 <form align="center" action="UsuarioM" method="POST" class="tm-contact-form">                                
                     <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
                         <label align="center" for="updated">Seleccione la persona a modificar</label>
@@ -52,14 +52,15 @@
                             <%
                                 if (request.getAttribute("usuarios") != null) {
                                     ArrayList<Trabajador> array = (ArrayList<Trabajador>) request.getAttribute("usuarios");
-                                    for (Trabajador t : array) {     
+                                    for (Trabajador t : array) {
                             %>
                             <option value="<%=t.getIdUsuario()%>"><%=t.getNombre()%></option>
                             <%      }
                                 }
                             %>
                         </select>   
-                        <label align="center" for="trabajador">Nombre del Trabajador(Completo)</label>
+                        <br>
+                        <label align="center" for="trabajador">Nombre Completo del trabajador </label>
                         <input type="text" name="trabajador" maxlength="30" class="form-control" placeholder="máx. 30" value=""  />
                         <br>
                         <label align="center" for="cargo">Cargo</label>
@@ -81,21 +82,23 @@
                             <%
                                 if (request.getAttribute("usuarios") != null) {
                                     ArrayList<Trabajador> array = (ArrayList<Trabajador>) request.getAttribute("usuarios");
-                                    for (Trabajador t : array) {     
+                                    for (Trabajador t : array) {
                             %>
                             <option value="<%=t.getIdUsuario()%>"><%=t.getNombre()%></option>
                             <%      }
                                 }
                             %>
                         </select>   
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Modificar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </div>                         
                 </form>   
 
             </section>
-            
-            
+
+
 
         </div>
 

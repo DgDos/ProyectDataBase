@@ -12,7 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Eliminar Funcion</title>
+        <title>Eliminar Función</title>
         <!--
         Ocean Theme
         http://www.templatemo.com/tm-484-ocean
@@ -41,7 +41,7 @@
 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-xs-center">
 
-                    <h2 class="tm-section-title">Eliminar Funcion</h2>
+                    <h2 class="tm-section-title">Eliminar Función</h2>
                     <br><br>
 
                 </div>
@@ -52,7 +52,7 @@
                             <%
                                 if (request.getAttribute("usuarios") != null) {
                                     ArrayList<Trabajador> array = (ArrayList<Trabajador>) request.getAttribute("usuarios");
-                                    for (Trabajador t : array) {     
+                                    for (Trabajador t : array) {
                             %>
                             <option value="<%=t.getIdUsuario()%>"><%=t.getNombre()%></option>
                             <%      }
@@ -65,23 +65,25 @@
                             <%
                                 if (request.getAttribute("servicios") != null) {
                                     ArrayList<Servicio> array = (ArrayList<Servicio>) request.getAttribute("servicios");
-                                    for (Servicio s : array) {     
+                                    for (Servicio s : array) {
                             %>
                             <option value="<%=s.getIdServicio()%>"><%=s.getNombreS()%></option>
                             <%      }
                                 }
                             %>
                         </select>  
+                        <br>
+                        <br>
                         <button type="submit" class="btn tm-bordered-btn pull-xs-center">Eliminar</button>
                         <a class="btn tm-bordered-btn pull-xs-center" href="menu.html" role="button">Volver</a>
                     </form>  
-                    
+
                 </div>                         
-                   
+
 
             </section>
-            
-            
+
+
 
         </div>
 
